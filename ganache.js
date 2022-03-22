@@ -1,22 +1,14 @@
-// const Web3 = require("web3");
-// import {web3} from "web3";
-
 import Web3 from 'web3';
-// const {Web3} = web3;
 import { defineConfig, loadEnv } from 'vite';
 
-// import dotenv from 'dotenv';
-// const {dotenv} = dotenv;
-// dotenv.config();
-// require("dotenv").config();
+import dotenv from 'dotenv';
 
-// const ganache = require("ganache-cli");
+dotenv.config();
 import ganache from 'ganache-cli';
 
 
-// console.log(import.meta.env.INFURA)
 const options = {
-  fork: `https://mainnet.infura.io/v3/0c70dbaf7ef448168e4f553df7fed683`,
+  fork: `${process.env.INFURA}`,
   unlocked_accounts: ["0x6262998ced04146fa42253a5c0af90ca02dfd2a3"],
   account_keys_path: "keys.json",
   host: "127.0.0.1",
